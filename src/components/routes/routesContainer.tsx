@@ -20,7 +20,6 @@ import RentalRequestDetail from "../rentalRequestDetail/rentalRequestDetail";
 import TransactionHistory from "../transactionHistory/transactionHistory";
 import TransactionDetail from "../transactionDetail/transactionDetail";
 import Cart from "../cart/cart";
-import Chat from "../chat/chat";
 import Otp from "../otp/otp";
 import SparepartBuyingDetail from "../sparepartBuyingDetail/sparepartBuyingDetail";
 const RoutesContainer = () => {
@@ -63,8 +62,6 @@ const RoutesContainer = () => {
           element={<Confirmation />}
         />
         <Route path="/order/order-detail" element={<OrderDetail />} />
-        <Route path="/chat" element={<Chat />} />
-        {/* <Route path="/tes-detail" element={<RequestEquipmentDetail />} /> */}
       </Routes>
     </>
   );
