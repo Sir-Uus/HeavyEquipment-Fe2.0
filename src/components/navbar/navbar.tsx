@@ -137,7 +137,7 @@ const Navbar = () => {
               <li>Parts {menu === "parts" ? <hr /> : null}</li>
             </Link>
             <Link to="/login">
-              <button>Login</button>
+              <li>Login</li>
             </Link>
             {isAuthenticated && (
               <>

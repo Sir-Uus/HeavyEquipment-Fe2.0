@@ -147,19 +147,21 @@ const Login = () => {
                 </FacebookLogin>
               </div>
               <div className="w-full flex justify-center">
-                <GoogleLogin
-                  onSuccess={(credentialResponse) => {
-                    const token = credentialResponse.credential;
-                    if (token) {
-                      googleLogin(token);
-                    }
-                  }}
-                  onError={() => {
-                    console.log("Google login failed");
-                  }}
-                  logo_alignment="left"
-                  width={385}
-                />
+                <div className="w-full max-w-[330px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px]">
+                  <GoogleLogin
+                    onSuccess={(credentialResponse) => {
+                      const token = credentialResponse.credential;
+                      if (token) {
+                        googleLogin(token);
+                      }
+                    }}
+                    onError={() => {
+                      console.log("Google login failed");
+                    }}
+                    logo_alignment="left"
+                    width="100%"
+                  />
+                </div>
               </div>
               <div>
                 <p className="text-sm font-light text-gray-500">
