@@ -42,7 +42,7 @@ export const useEquipments = () => {
     ],
 
     queryFn: async () => {
-      const delay = new Promise((resolve) => setTimeout(resolve, 1000));
+      const delay = new Promise((resolve) => setTimeout(resolve, 500));
       await delay;
       const response = await axios.get("/Equipment", {
         params: {
@@ -63,16 +63,12 @@ export const useEquipments = () => {
       });
       return response?.data;
     },
+    staleTime: 60000,
   });
 
   const fetchEquipmentImage = async (equipmentId: number) => {
     const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-    await delay(1000);
-    const response = await axios.get(`/Equipment/image/${equipmentId}`);
-    return response.data[0]?.image;
-  };
-
-  const fetchEquipmentImages = async (equipmentId: number) => {
+    await delay(500);
     const response = await axios.get(`/Equipment/image/${equipmentId}`);
     return response.data[0]?.image;
   };
@@ -84,24 +80,6 @@ export const useEquipments = () => {
 
       for (const equipment of equipmentData?.data || []) {
         const image = await fetchEquipmentImage(equipment.id);
-        images.push({ equipmentId: equipment.id, image });
-      }
-
-      return images.reduce((acc: any, item) => {
-        acc[item.equipmentId] = item.image;
-        return acc;
-      }, {});
-    },
-    enabled: !!equipmentData?.data,
-  });
-
-  const equipmentImagess = useQuery({
-    queryKey: ["equipmentImagess", equipmentData?.data],
-    queryFn: async () => {
-      const images: { equipmentId: number; image: string }[] = [];
-
-      for (const equipment of equipmentData?.data || []) {
-        const image = await fetchEquipmentImages(equipment.id);
         images.push({ equipmentId: equipment.id, image });
       }
 
@@ -159,6 +137,5 @@ export const useEquipments = () => {
     handleEdit,
     equipmentLoading,
     equipmentImages: equipmentImages?.data || [],
-    equipmentImagess: equipmentImagess?.data || [],
   };
 };

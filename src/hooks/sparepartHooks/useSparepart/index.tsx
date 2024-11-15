@@ -46,16 +46,12 @@ export const useSparePart = () => {
       });
       return response?.data;
     },
+    staleTime: 60000,
   });
 
   const fetchSparePartImage = async (sparePartId: number) => {
     const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-    await delay(1000);
-    const response = await axios.get(`/SparePart/image/${sparePartId}`);
-    return response.data[0]?.image;
-  };
-
-  const fetchSparePartImages = async (sparePartId: number) => {
+    await delay(500);
     const response = await axios.get(`/SparePart/image/${sparePartId}`);
     return response.data[0]?.image;
   };
@@ -67,24 +63,6 @@ export const useSparePart = () => {
 
       for (const sparePart of sparePartData?.data || []) {
         const image = await fetchSparePartImage(sparePart.id);
-        images.push({ sparePartId: sparePart.id, image });
-      }
-
-      return images.reduce((acc: any, item) => {
-        acc[item.sparePartId] = item.image;
-        return acc;
-      }, {});
-    },
-    enabled: !!sparePartData?.data,
-  });
-
-  const sparePartImages = useQuery({
-    queryKey: ["sparePartImages", sparePartData?.data],
-    queryFn: async () => {
-      const images: { sparePartId: number; image: string }[] = [];
-
-      for (const sparePart of sparePartData?.data || []) {
-        const image = await fetchSparePartImages(sparePart.id);
         images.push({ sparePartId: sparePart.id, image });
       }
 
@@ -149,6 +127,5 @@ export const useSparePart = () => {
     sparePartLoading,
     equipmentLoading,
     sparePartImage: sparePartImage?.data || [],
-    sparePartImages: sparePartImages?.data || [],
   };
 };

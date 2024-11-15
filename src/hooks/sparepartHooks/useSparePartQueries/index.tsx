@@ -60,7 +60,7 @@ export const useSparePartOptions = (filters: any) => {
   });
 };
 
-export const useSparePartImages = (sparePartIds: number[], delay: number = 500) => {
+export const useSparePartImages = (sparePartIds: number[], delay: number = 300) => {
   return useQuery({
     queryKey: ["sparePartImages", sparePartIds],
     queryFn: () => fetchSparePartImages(sparePartIds, delay),

@@ -8,7 +8,7 @@ const recomendationSparepart = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const cardsPerView = 3;
 
-  const { sparePart, sparePartImages } = useSparePart();
+  const { sparePart, sparePartImage } = useSparePart();
   const handleNext = () => {
     if (currentIndex + cardsPerView < sparePart.length) {
       setCurrentIndex(currentIndex + 1);
@@ -77,10 +77,10 @@ const recomendationSparepart = () => {
               >
                 <Link to={`/equipment/details/${sparePart.id}`}>
                   <div className="flex justify-center">
-                    {sparePartImages?.[sparePart.id] ? (
+                    {sparePartImage?.[sparePart.id] ? (
                       <CardMedia
                         component="img"
-                        image={sparePartImages[sparePart.id]}
+                        image={sparePartImage[sparePart.id]}
                         alt={`sparePart-${sparePart.id}`}
                         style={{
                           margin: 16,

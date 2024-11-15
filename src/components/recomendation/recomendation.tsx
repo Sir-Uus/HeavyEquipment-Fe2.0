@@ -8,7 +8,7 @@ const Recomendation = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const cardsPerView = 3;
 
-  const { equipments, equipmentImagess } = useEquipments();
+  const { equipments, equipmentImages } = useEquipments();
 
   const handleNext = () => {
     if (currentIndex + cardsPerView < equipments.length) {
@@ -80,10 +80,10 @@ const Recomendation = () => {
               >
                 <Link to={`/equipment/details/${equipment.id}`}>
                   <div className="flex justify-center">
-                    {equipmentImagess?.[equipment.id] ? (
+                    {equipmentImages?.[equipment.id] ? (
                       <CardMedia
                         component="img"
-                        image={equipmentImagess[equipment.id] || ""}
+                        image={equipmentImages[equipment.id] || ""}
                         alt={`equipment-${equipment.id}`}
                         style={{
                           margin: 16,
@@ -100,7 +100,7 @@ const Recomendation = () => {
                           height: { xs: 70, sm: 180, xl: 230 },
                         }}
                       />
-                    )} 
+                    )}
                   </div>
                   <div className="border-t border-gray-300">
                     <div className="text-[8px] md:text-[12px] m-2 mt-4">
