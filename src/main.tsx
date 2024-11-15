@@ -6,7 +6,14 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import App from "./App.tsx";
 import "./index.css";
 
-const queryClient = new QueryClient({});
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60000,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 createRoot(document.getElementById("root")!).render(
   <GoogleOAuthProvider clientId="661161141279-9sf309dovfscdfbgqld9u5gnloef6nl7.apps.googleusercontent.com">
