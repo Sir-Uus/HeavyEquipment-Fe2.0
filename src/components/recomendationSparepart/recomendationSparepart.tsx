@@ -75,28 +75,30 @@ const recomendationSparepart = () => {
                 }}
                 className="w-[29%] md:w-[32%]"
               >
-                <div className="flex justify-center">
-                  {sparePartImages?.[sparePart.id] ? (
-                    <CardMedia
-                      component="img"
-                      image={sparePartImages[sparePart.id]}
-                      alt={`sparePart-${sparePart.id}`}
-                      style={{
-                        margin: 16,
-                      }}
-                      className=" w-[190px] h-[70px] md:w-[230px] md:h-[180px] xl:w-[250px] xl:h-[230px] object-cover"
-                    />
-                  ) : (
-                    <Skeleton
-                      variant="rectangular"
-                      sx={{
-                        margin: 2,
-                        width: { xs: 190, sm: 230, xl: 250 },
-                        height: { xs: 70, sm: 180, xl: 230 },
-                      }}
-                    />
-                  )}
-                </div>
+                <Link to={`/equipment/details/${sparePart.id}`}>
+                  <div className="flex justify-center">
+                    {sparePartImages?.[sparePart.id] ? (
+                      <CardMedia
+                        component="img"
+                        image={sparePartImages[sparePart.id]}
+                        alt={`sparePart-${sparePart.id}`}
+                        style={{
+                          margin: 16,
+                        }}
+                        className=" w-[190px] h-[70px] md:w-[230px] md:h-[180px] xl:w-[250px] xl:h-[230px] object-cover"
+                      />
+                    ) : (
+                      <Skeleton
+                        variant="rectangular"
+                        sx={{
+                          margin: 2,
+                          width: { xs: 190, sm: 230, xl: 250 },
+                          height: { xs: 70, sm: 180, xl: 230 },
+                        }}
+                      />
+                    )}
+                  </div>
+                </Link>
                 <div className="border-t border-gray-300">
                   <div className="text-[8px] md:text-[12px] m-2 mt-4">
                     <span className="px-1 md:px-3">{formatNumber(sparePart?.price)}</span>

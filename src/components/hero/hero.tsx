@@ -21,23 +21,27 @@ const Hero = () => {
           isVisible ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <h2 className="text-md md:text-xl xl:text-3xl font-bold">POWERFUL EQUIPMENT</h2>
-        <p className="text-[12px] md:text-sm xl:text-[18px] xl:leading-7 font-light text-gray-900">
+        <h2 className="text-md md:text-xl xl:text-3xl 2xl:text-[50px] font-bold 2xl:ml-16 2xl:mt-16">
+          POWERFUL EQUIPMENT
+        </h2>
+        <p className="text-[12px] md:text-sm xl:text-[18px] 2xl:text-2xl xl:leading-7 2xl:ml-16 2xl:mt-8 font-light text-gray-900">
           Welcome to our website for heavy equipment rentals and spare parts purchases. We offer a wide range
           of rental equipment and high-quality spare parts for your needs. Find optimal solutions and the
           support for your projects with us.
         </p>
-        <div className="mt-2 md:mt-8  ">
+        <div className="mt-2 md:mt-8 2xl:ml-16  ">
           {isAuthenticated ? (
             <Link to="/equipment">
-              <button className="flex justify-center items-center text-[9px] gap-1 p-2 w-36 md:text-[13px] xl:text-[15px] md:gap-4 md:py-3 md:w-56 rounded-full bg-yellow-400 text-gray-900 duration-600 ease-in hover:bg-yellow-300 hover:text-gray-950 transition-transform transform hover:scale-105">
+              <button className="flex justify-center items-center text-[9px] gap-1 p-2 w-36 md:text-[13px] xl:text-[15px] 2xl:text-[24px] md:gap-4 md:py-3 md:w-56 2xl:w-80 rounded-full bg-yellow-400 text-gray-900 duration-600 ease-in hover:bg-yellow-300 hover:text-gray-950 transition-transform transform hover:scale-105">
                 Browse Equipment{" "}
-                <span className="material-icons text-[9px] md:text-[15px]">arrow_right_alt</span>
+                <span className="material-icons text-[9px] md:text-[15px] 2xl:text-[24px]">
+                  arrow_right_alt
+                </span>
               </button>
             </Link>
           ) : (
             <Link to="/register">
-              <button className="flex justify-center items-center text-[12px] gap-1 p-2 w-28 md:text-[13px] xl:text-[15px] md:gap-4 md:py-3 md:w-56 rounded-full bg-yellow-400 text-gray-900 transition duration-300 ease-in hover:bg-yellow-300 hover:text-gray-950">
+              <button className="flex justify-center items-center text-[12px] gap-1 p-2 w-28 md:text-[13px] xl:text-[15px] 2xl:text-[24px] md:gap-4 md:py-3 md:w-56 2xl:w-80 rounded-full bg-yellow-400 text-gray-900 transition duration-300 ease-in hover:bg-yellow-300 hover:text-gray-950">
                 Register
               </button>
             </Link>
@@ -52,12 +56,12 @@ const Hero = () => {
         <img
           src={hero_img}
           alt="Dump Truck"
-          className="hidden md:flex md:w-[360px] xl:w-[600px] lg:w-[500px] mr-10 mt-[120px] z-10 relative"
+          className="hidden md:flex md:w-[360px] xl:w-[600px] 2xl:w-[900px] lg:w-[500px] mr-10 mt-[120px] 2xl:mt-[250px] z-10 relative"
         />
         <img
           src="/segi_lima2.png"
           alt="Pentagon"
-          className="hidden md:flex absolute right-[-100px] xl:right-[-200px] bottom-90 w-[880px] h-[1000px] z-0"
+          className="hidden md:flex absolute right-[-100px] xl:right-[-200px] 2xl:right-[-300px] bottom-90 w-[880px] 2xl:w-[1400px] h-[1000px] 2xl:h-[1500px] z-0"
         />
       </div>
     </div>

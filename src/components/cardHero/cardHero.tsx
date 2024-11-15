@@ -17,13 +17,13 @@ const cardHero = () => {
             <Card
               key={index}
               variant="elevation"
-              className="p-2 cursor-pointer w-[70px] hover:scale-105 h-[105px] md:w-[110px] md:h-[150px] md:p-4"
+              className="p-2 cursor-pointer w-[70px] hover:scale-105 h-[105px] md:w-[110px] md:h-[150px] md:p-4 2xl:w-[180px] 2xl:h-[210px] 2xl:p-8"
             >
               <CardMedia
                 component="img"
                 image={card.image}
                 alt={card.alt}
-                className="rounded-full w-[80px] md:w-[60px]"
+                className="rounded-full w-[80px] md:w-[60px] 2xl:w-80px"
               />
               <p className="text-center text-[8px] font-semibold m-2 md:text-[12px]">{card.text}</p>
             </Card>

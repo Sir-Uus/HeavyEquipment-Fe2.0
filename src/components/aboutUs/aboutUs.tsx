@@ -11,7 +11,7 @@ const AboutUs = () => {
 
   return (
     <section
-      className={`overflow-hidden pt-28 md:overflow-hidden lg:pt-0 xl:pt-0 fade-in ${
+      className={`overflow-hidden pt-28 2xl:h-screen md:overflow-hidden lg:pt-0 xl:pt-0 fade-in ${
         isLoaded ? "active" : ""
       }`}
     >
@@ -44,13 +44,13 @@ const AboutUs = () => {
 
           <div className="relative">
             <img
-              className="absolute inset-x-0 bottom-0 -mb-48 -translate-x-1/2 left-1/2 lg:block hidden"
+              className="absolute inset-x-0 bottom-0 -mb-48 2xl:bottom-[-280px] -translate-x-1/2 left-1/2 lg:block hidden"
               src="https://cdn.rareblocks.xyz/collection/celebration/images/team/1/blob-shape.svg"
               alt=""
             />
 
             <img
-              className="relative w-full xl:max-w-lg xl:mx-auto 2xl:origin-bottom 2xl:scale-105 lg:block hidden"
+              className="relative w-full xl:max-w-lg xl:mx-auto 2xl:bottom-[-280px] 2xl:scale-105 lg:block hidden"
               src="/mech-woman.png"
               alt=""
             />

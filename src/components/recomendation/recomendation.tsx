@@ -83,7 +83,7 @@ const Recomendation = () => {
                     {equipmentImagess?.[equipment.id] ? (
                       <CardMedia
                         component="img"
-                        image={equipmentImagess[equipment.id]}
+                        image={equipmentImagess[equipment.id] || ""}
                         alt={`equipment-${equipment.id}`}
                         style={{
                           margin: 16,
@@ -100,7 +100,7 @@ const Recomendation = () => {
                           height: { xs: 70, sm: 180, xl: 230 },
                         }}
                       />
-                    )}
+                    )} 
                   </div>
                   <div className="border-t border-gray-300">
                     <div className="text-[8px] md:text-[12px] m-2 mt-4">
