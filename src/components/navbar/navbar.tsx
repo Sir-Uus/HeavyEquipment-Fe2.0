@@ -136,6 +136,9 @@ const Navbar = () => {
             <Link to="/parts" onClick={() => handleMenuClick("parts")}>
               <li>Parts {menu === "parts" ? <hr /> : null}</li>
             </Link>
+            <Link to="/login">
+              <button>Login</button>
+            </Link>
             {isAuthenticated && (
               <>
                 <Link to="/order" onClick={() => handleMenuClick("order")}>
@@ -143,9 +146,6 @@ const Navbar = () => {
                 </Link>
                 <Link to="/transaction-history" onClick={() => handleMenuClick("transaction-history")}>
                   <li>Transaction History {menu === "transaction-history" ? <hr /> : null}</li>
-                </Link>
-                <Link to="/login">
-                  <button>Login</button>
                 </Link>
               </>
             )}
