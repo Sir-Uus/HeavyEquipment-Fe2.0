@@ -144,6 +144,9 @@ const Navbar = () => {
                 <Link to="/transaction-history" onClick={() => handleMenuClick("transaction-history")}>
                   <li>Transaction History {menu === "transaction-history" ? <hr /> : null}</li>
                 </Link>
+                <Link to="/login">
+                  <button>Login</button>
+                </Link>
               </>
             )}
           </ul>
