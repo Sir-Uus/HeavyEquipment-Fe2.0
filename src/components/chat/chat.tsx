@@ -27,6 +27,7 @@ const Dial: React.FC = () => {
   const [message, setMessage] = useState<string>("");
 
   const senderId = localStorage.getItem("id") || "";
+  const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
   const [receiverId, setReceiverId] = useState<string>("1e3ebc47-6be9-42ff-bf72-62f8ceb8ce71");
 
@@ -43,6 +44,7 @@ const Dial: React.FC = () => {
   };
 
   useEffect(() => {
+    if (!senderId || !token) return;
     if (role === "User") {
       setReceiverId("1e3ebc47-6be9-42ff-bf72-62f8ceb8ce71");
     }
@@ -99,6 +101,10 @@ const Dial: React.FC = () => {
       }
     }
   };
+
+  if (!senderId || !token) {
+    return null;
+  }
 
   return (
     <div>
