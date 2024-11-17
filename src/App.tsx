@@ -4,6 +4,7 @@ import "react-toastify/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import RoutesContainer from "./components/routes/routesContainer";
 import "./App.css";
+import Chat from "./components/chat/chat";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function Content() {
       {!isAdminPath && showNavbar && <Navbar />}
       <div className="main-content">
         <RoutesContainer />
+        <Chat />
       </div>
       <ToastContainer />
     </div>

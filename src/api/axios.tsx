@@ -2,6 +2,8 @@ import axios from "axios";
 import { Equipments } from "../types/EquipmentTypes";
 
 export const BASE_URL = import.meta.env.VITE_BASE_URL;
+export const CHAT_URL = import.meta.env.VITE_CHAT_URL;
+
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
   headers: {

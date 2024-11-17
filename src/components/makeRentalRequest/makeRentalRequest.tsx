@@ -14,25 +14,33 @@ import Modal from "../modal/modal";
 
 const schema = z.object({
   userId: z.string().min(1, "User ID is required"),
-  equipmentId: z.number().min(1, "Equipment ID must not empty"),
-  starDate: z.string()
-  .min(1, "Start Date is required")
-  .refine((date) => {
-    const currentDate = new Date();
-    const selectedDate = new Date(date);
-    const diffTime = selectedDate.getTime() - currentDate.getTime();
-    const diffDays = Math.ceil(diffTime / (1000 * 3600 * 24));
-    return diffDays >= 1;
-  }, "Start Date must be at least 1 days after today"),
-  endDate: z.string()
-  .min(1, "End Date is required")
-  .refine((date) => {
-    const currentDate = new Date();
-    const selectedDate = new Date(date);
-    const diffTime = selectedDate.getTime() - currentDate.getTime();
-    const diffDays = Math.ceil(diffTime / (1000 * 3600 * 24));
-    return diffDays >= 1;
-  }, "End Date must be at least 1 days after start date"),
+  equipmentId: z
+    .union([
+      z.string(),
+      z.number(),
+      z.nan(),
+    ])
+    .refine((value) => value !== "", "Equipment ID must not be empty"),
+  starDate: z
+    .string()
+    .min(1, "Start Date is required")
+    .refine((date) => {
+      const currentDate = new Date();
+      const selectedDate = new Date(date);
+      const diffTime = selectedDate.getTime() - currentDate.getTime();
+      const diffDays = Math.ceil(diffTime / (1000 * 3600 * 24));
+      return diffDays >= 1;
+    }, "Start Date must be at least 1 days after today"),
+  endDate: z
+    .string()
+    .min(1, "End Date is required")
+    .refine((date) => {
+      const currentDate = new Date();
+      const selectedDate = new Date(date);
+      const diffTime = selectedDate.getTime() - currentDate.getTime();
+      const diffDays = Math.ceil(diffTime / (1000 * 3600 * 24));
+      return diffDays >= 1;
+    }, "End Date must be at least 1 days after start date"),
   status: z.enum(["Approved", "Pending"], { required_error: "Status is required" }),
   invoice: z.string().nonempty(),
 });
