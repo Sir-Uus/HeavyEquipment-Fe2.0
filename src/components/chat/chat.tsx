@@ -33,7 +33,8 @@ const Dial: React.FC = () => {
 
   const { data: users, isLoading: loadingUsers, error: userError } = useUserOptions();
 
-  const { data: history, isLoading: loadingHistory } = useMessageHistory(senderId, receiverId);
+  const { data: history, isLoading: loadingHistory } =
+    senderId && token ? useMessageHistory(senderId, receiverId) : { data: null, isLoading: false };
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -73,6 +74,7 @@ const Dial: React.FC = () => {
   }, [role]);
 
   useEffect(() => {
+    if (!senderId || !token) return;
     if (history) {
       const formattedHistory = history.map((msg: any) => ({
         sender: msg.senderId.trim().toLowerCase(),
@@ -81,7 +83,7 @@ const Dial: React.FC = () => {
       }));
       setMessages(formattedHistory);
     }
-  }, [history]);
+  }, [history, senderId, token]);
 
   useEffect(() => {
     scrollToBottom();
