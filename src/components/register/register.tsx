@@ -1,9 +1,8 @@
-// src/components/Register.tsx
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Link, useNavigate } from "react-router-dom";
-import { useRegister } from "../../hooks/loginHooks/useRegister"; // Import the custom hook
+import { useRegister } from "../../hooks/loginHooks/useRegister";
 
 const registerSchema = z.object({
   displayName: z
@@ -45,7 +44,7 @@ const Register = () => {
 
   const onSubmit = async (data: RegisterFormData) => {
     try {
-      await register(data);
+      register(data);
       navigate("/login");
     } catch (error) {
       console.error("Registration failed:", error);

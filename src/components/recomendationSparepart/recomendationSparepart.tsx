@@ -66,7 +66,6 @@ const recomendationSparepart = () => {
               <Card
                 key={sparePart.id}
                 sx={{
-                  // width: "32%",
                   flexShrink: 0,
                   transition: "transform 0.3s ease-in-out",
                   "&:hover": {
@@ -100,23 +99,24 @@ const recomendationSparepart = () => {
                   </div>
                 </Link>
                 <div className="border-t border-gray-300">
-                  <div className="text-[8px] md:text-[12px] m-2 mt-4">
+                  <div className="flex justify-between text-[8px] md:text-[14px] m-2 mt-4">
+                    <span className="px-1 md:px-3">{sparePart?.partName}</span>
                     <span className="px-1 md:px-3">{formatNumber(sparePart?.price)}</span>
                   </div>
                   <div className="m-4 flex justify-between">
                     <div className="flex gap-2">
-                      <span className="material-icons text-yellow-400 text-[8px] md:text-[12px] md:mt-[3px]">
+                      <span className="material-icons text-yellow-400 text-[8px] md:text-[14px] md:mt-[3px]">
                         comment
                       </span>
-                      <span className="text-[5px] md:text-[12px]">
+                      <span className="text-[8px] md:text-[14px]">
                         {sparePart?.sparePartFeedbacks?.length}
                       </span>
                     </div>
                     <div className="flex gap-2">
-                      <span className="text-[5px] md:text-[12px]">
+                      <span className="text-[8px] md:text-[14px]">
                         {getAverageRatingSparepart(sparePart?.sparePartFeedbacks)}
                       </span>
-                      <span className="material-icons text-yellow-400 text-[8px] md:text-[12px] md:mt-[3px]">
+                      <span className="material-icons text-yellow-400 text-[8px] md:text-[14px] md:mt-[3px]">
                         star
                       </span>
                     </div>

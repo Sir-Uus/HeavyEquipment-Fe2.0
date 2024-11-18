@@ -69,7 +69,6 @@ const Recomendation = () => {
               <Card
                 key={equipment.id}
                 sx={{
-                  // width: "32%",
                   flexShrink: 0,
                   transition: "transform 0.3s ease-in-out",
                   "&:hover": {
@@ -87,7 +86,7 @@ const Recomendation = () => {
                         alt={`equipment-${equipment.id}`}
                         style={{
                           margin: 16,
-                          objectFit: "fill",
+                          objectFit: "cover",
                         }}
                         className="w-[190px] h-[70px] md:w-[230px] md:h-[180px] xl:w-[250px] xl:h-[230px]"
                       />
@@ -103,23 +102,24 @@ const Recomendation = () => {
                     )}
                   </div>
                   <div className="border-t border-gray-300">
-                    <div className="text-[8px] md:text-[12px] m-2 mt-4">
+                    <div className="flex justify-between text-[8px] md:text-[14px] m-1 mt-4">
+                      <span className="px-1 md:px-3">{equipment?.name}</span>
                       <span className="px-1 md:px-3">{formatNumber(equipment?.rentalPrice)}</span>
                     </div>
                     <div className="m-4 flex justify-between">
                       <div className="flex gap-2">
-                        <span className="material-icons text-yellow-400 text-[8px] md:text-[12px] md:mt-[3px] ">
+                        <span className="material-icons text-yellow-400 text-[8px] md:text-[14px] md:mt-[3px] ">
                           comment
                         </span>
-                        <span className="text-[5px] md:text-[12px]">
+                        <span className="text-[8px] md:text-[14px]">
                           {equipment?.performanceFeedbacks?.length}
                         </span>
                       </div>
                       <div className="flex gap-2">
-                        <span className="text-[5px] md:text-[12px]">
+                        <span className="text-[8px] md:text-[14px]">
                           {getAverageRating(equipment?.performanceFeedbacks)}
                         </span>
-                        <span className="material-icons text-yellow-400 text-[8px] md:text-[12px] md:mt-[3px] ">
+                        <span className="material-icons text-yellow-400 text-[8px] md:text-[14px] md:mt-[3px] ">
                           star
                         </span>
                       </div>
