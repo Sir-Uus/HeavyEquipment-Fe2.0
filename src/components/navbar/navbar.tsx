@@ -78,6 +78,7 @@ const Navbar = () => {
 
   const confirmLogout = () => {
     setShowConfirmModal(true);
+    setIsDrawerOpen(false);
   };
 
   const closeModal = () => {
@@ -136,9 +137,11 @@ const Navbar = () => {
             <Link to="/parts" onClick={() => handleMenuClick("parts")}>
               <li>Parts {menu === "parts" ? <hr /> : null}</li>
             </Link>
-            <Link to="/login">
-              <li>Login</li>
-            </Link>
+            {!isAuthenticated && (
+              <Link to="/login">
+                <li>Login</li>
+              </Link>
+            )}
             {isAuthenticated && (
               <>
                 <Link to="/order" onClick={() => handleMenuClick("order")}>
@@ -147,6 +150,9 @@ const Navbar = () => {
                 <Link to="/transaction-history" onClick={() => handleMenuClick("transaction-history")}>
                   <li>Transaction History {menu === "transaction-history" ? <hr /> : null}</li>
                 </Link>
+                <div>
+                  <li onClick={confirmLogout}>Logout</li>
+                </div>
               </>
             )}
           </ul>
@@ -162,11 +168,6 @@ const Navbar = () => {
                   shopping_cart
                 </span>
                 {cartItemCount > 0 && <span className="cart-item-count">{cartItemCount}</span>}
-              </Link>
-            </Tooltip>
-            <Tooltip title="Chat" arrow>
-              <Link to="/chat">
-                <span className="material-icons text-sm lg:text-2xl lg:mt-[-2px]  md:text-[18px]">chat</span>
               </Link>
             </Tooltip>
             {role === "Admin" ? (
