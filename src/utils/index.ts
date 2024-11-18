@@ -66,3 +66,9 @@ export const calculateDays = (starDate: string, endDate: string) => {
   const timeDiff = end.getTime() - start.getTime();
   return Math.ceil(timeDiff / (1000 * 3600 * 24));
 };
+
+export const formatMessageContent = (content: string) => {
+  const maxCharsPerLine = 34;
+  const regex = new RegExp(`.{1,${maxCharsPerLine}}`, "g");
+  return content.match(regex) || [];
+};

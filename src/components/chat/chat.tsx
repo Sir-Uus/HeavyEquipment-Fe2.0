@@ -6,13 +6,14 @@ import {
   Select,
   MenuItem,
   FormControl,
-  InputLabel,
   CircularProgress,
+  InputLabel,
 } from "@mui/material";
 import { Chat as ChatIcon, Close as CloseIcon, Send as SendIcon } from "@mui/icons-material";
 import { useUserOptions } from "../../hooks/rentalRequestHooks/useUserOption";
 import { useMessageHistory } from "../../hooks/mesageHooks/useHistoryChat";
 import { CHAT_URL } from "../../api/axios";
+import { formatMessageContent } from "../../utils";
 
 interface Message {
   sender: string;
@@ -121,15 +122,15 @@ const Dial: React.FC = () => {
       )}
 
       {open && (
-        <div className="fixed bottom-20 right-5 bg-white shadow-xl w-96 rounded-lg border border-gray-200 z-50">
+        <div className="fixed bottom-20 right-5 bg-white shadow-xl w-72 md:w-96 rounded-lg border border-gray-200 z-50">
           <div className="flex justify-between items-center p-4 border-b">
-            <span className="text-lg font-semibold">Chat Support</span>
+            <span className="text-xs md:text-[16px] font-semibold">Chat Support</span>
             <IconButton onClick={() => setOpen(false)}>
               <CloseIcon />
             </IconButton>
           </div>
 
-          <div className="p-4 h-60 overflow-y-auto space-y-4">
+          <div className="p-4 h-60  overflow-y-auto space-y-4">
             {loadingHistory ? (
               <CircularProgress />
             ) : (
@@ -140,13 +141,17 @@ const Dial: React.FC = () => {
                     className={`flex ${msg.sender === senderId ? "justify-end" : "justify-start"}`}
                   >
                     <div
-                      className={`max-w-xs p-3 rounded-lg ${
+                      className={`max-w-[18rem] p-3 rounded-lg ${
                         msg.sender === senderId ? "bg-yellow-400 text-black" : "bg-gray-200 text-black"
                       }`}
                     >
-                      <p className="break-words">{msg.content}</p>
+                      {formatMessageContent(msg.content).map((line, lineIndex) => (
+                        <p key={lineIndex} className="break-words text-[10px] md:text-xs">
+                          {line}
+                        </p>
+                      ))}
                       <small
-                        className={`text-xs block mt-1 ${
+                        className={`text-[8px] md:text-xs block mt-1 ${
                           msg.sender === senderId ? "text-gray-500" : "text-gray-500"
                         }`}
                       >
@@ -171,11 +176,13 @@ const Dial: React.FC = () => {
                 <div>Error loading users</div>
               ) : (
                 <FormControl fullWidth>
-                  <InputLabel id="receiver-select-label">Select Receiver</InputLabel>
+                  <InputLabel id="receiver-label">Receiver</InputLabel>
                   <Select
-                    labelId="receiver-select-label"
+                    labelId="receiver-label"
+                    label="Receiver"
                     value={receiverId}
                     onChange={(e) => setReceiverId(e.target.value)}
+                    displayEmpty
                   >
                     {users.map((user: { id: string; displayName: string }) => (
                       <MenuItem key={user.id} value={user.id}>

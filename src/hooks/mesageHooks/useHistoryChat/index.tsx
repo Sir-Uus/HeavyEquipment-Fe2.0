@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "../../api/axios";
+import axios from "../../../api/axios";
 
 const fetchMessageHistory = async (userId: string, otherUserId: string) => {
   const { data } = await axios.get(`/Message/history`, {
