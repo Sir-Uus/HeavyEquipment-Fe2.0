@@ -179,7 +179,6 @@ const Dial: React.FC = () => {
                   <InputLabel id="receiver-label">Receiver</InputLabel>
                   <Select
                     labelId="receiver-label"
-                    label="Receiver"
                     value={receiverId}
                     onChange={(e) => setReceiverId(e.target.value)}
                     displayEmpty
