@@ -5,6 +5,7 @@ import { formatNumber } from "../../utils";
 import { Button, Tooltip, Typography } from "@mui/material";
 import { QRCodeSVG } from "qrcode.react";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../../api/axios";
 
 interface PaymentData {
   transactionId: string;
@@ -142,7 +143,7 @@ const ModalPayment: React.FC<PaymentModalProps> = ({
               Scan QR Code to Complete Payment
             </Typography>
             <QRCodeSVG
-              value={import.meta.env.VITE_BASE_URL + `/Payment/complete-payment-sparepart/${transactionId}`}
+              value={BASE_URL + `/Payment/complete-payment-sparepart/${transactionId}`}
               size={200}
               level="H"
               className="animate-pulse mx-auto"

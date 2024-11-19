@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useState } from "react";
-import axios from "../../api/axios";
+import axios, { BASE_URL } from "../../api/axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { QRCodeSVG } from "qrcode.react";
 import { useRentalRequestIdsOptions } from "../../hooks/paymenHooks/useRentalRequestOption";
@@ -217,7 +217,7 @@ const MakePayment = () => {
                 Scan QR Code to Complete Payment
               </Typography>
               <QRCodeSVG
-                value={import.meta.env.VITE_BASE_URL + `/Payment/complete-payment/${rentalRequestId}`}
+                value={BASE_URL + `/Payment/complete-payment/${rentalRequestId}`}
                 size={200}
                 level="H"
                 className="animate-pulse mx-auto"
