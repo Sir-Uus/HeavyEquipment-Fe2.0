@@ -81,7 +81,7 @@ const Parts = () => {
       }
 
       if (
-        window.innerHeight + window.scrollY >= document.body.offsetHeight - 400 &&
+        window.innerHeight + window.scrollY >= document.body.offsetHeight - 200 &&
         hasNextPage &&
         !isFetchingNextPage
       )
