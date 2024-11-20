@@ -58,6 +58,7 @@ export const useSparePartOptions = (filters: any) => {
     },
     initialPageParam: 1,
     staleTime: 60000,
+    refetchOnWindowFocus: false,
   });
 };
 
@@ -66,6 +67,7 @@ export const useSparePartImages = (sparePartIds: number[], delay: number = 300) 
     queryKey: ["sparePartImages", sparePartIds],
     queryFn: () => fetchSparePartImages(sparePartIds, delay),
     enabled: sparePartIds.length > 0,
-    staleTime: 60000
+    staleTime: 60000,
+    refetchOnWindowFocus: false
   });
 };

@@ -62,6 +62,7 @@ export const useEquipmentImages = (equipmentIds: number[], delay: number = 500) 
     queryFn: () => fetchEquipmentImages(equipmentIds, delay),
     enabled: equipmentIds.length > 0,
     staleTime: 60000,
+    refetchOnWindowFocus: false,
   });
 };
 
@@ -74,5 +75,6 @@ export const useEquipmentOptions = (filters: any) => {
     },
     initialPageParam: 1,
     staleTime: 60000,
+    refetchOnWindowFocus: false,
   });
 };
