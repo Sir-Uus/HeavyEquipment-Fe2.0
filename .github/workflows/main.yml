@@ -22,12 +22,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y docker-compose
-          
-      # Build and push Docker images
-      - name: Build and Push Services
-        run: |
-          docker-compose -f docker-compose.yml build
-          docker-compose -f docker-compose.yml push
 
       # Deploy to VPS
       - name: Deploy to VPS
