@@ -22,7 +22,7 @@ const Hero = () => {
         }`}
       >
         <h2 className="text-md md:text-xl xl:text-3xl 2xl:text-[50px] font-bold 2xl:ml-16 2xl:mt-16">
-          TRUCK TRUCK
+          POWERFULL EQUIPMENT
         </h2>
         <p className="text-[12px] md:text-sm xl:text-[18px] 2xl:text-2xl xl:leading-7 2xl:ml-16 2xl:mt-8 font-light text-gray-900">
           Welcome to our website for heavy equipment rentals and spare parts purchases. We offer a wide range
@@ -42,7 +42,7 @@ const Hero = () => {
           ) : (
             <Link to="/register">
               <button className="flex justify-center items-center text-[12px] gap-1 p-2 w-28 md:text-[13px] xl:text-[15px] 2xl:text-[24px] md:gap-4 md:py-3 md:w-56 2xl:w-80 rounded-full bg-yellow-400 text-gray-900 transition duration-300 ease-in hover:bg-yellow-300 hover:text-gray-950">
-                CI/CD
+                Register
               </button>
             </Link>
           )}

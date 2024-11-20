@@ -57,6 +57,7 @@ export const useSparePartOptions = (filters: any) => {
       return lastPage.hasNextPage ? lastPage.currentPage + 1 : undefined;
     },
     initialPageParam: 1,
+    staleTime: 60000,
   });
 };
 
@@ -65,5 +66,6 @@ export const useSparePartImages = (sparePartIds: number[], delay: number = 300) 
     queryKey: ["sparePartImages", sparePartIds],
     queryFn: () => fetchSparePartImages(sparePartIds, delay),
     enabled: sparePartIds.length > 0,
+    staleTime: 60000
   });
 };
