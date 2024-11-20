@@ -42,7 +42,7 @@ const Hero = () => {
           ) : (
             <Link to="/register">
               <button className="flex justify-center items-center text-[12px] gap-1 p-2 w-28 md:text-[13px] xl:text-[15px] 2xl:text-[24px] md:gap-4 md:py-3 md:w-56 2xl:w-80 rounded-full bg-yellow-400 text-gray-900 transition duration-300 ease-in hover:bg-yellow-300 hover:text-gray-950">
-                Register
+                CI/CD
               </button>
             </Link>
           )}
