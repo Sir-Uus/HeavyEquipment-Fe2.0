@@ -32,7 +32,8 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
             cd HeavyEquipment
-            git clone https://github.com/Sir-Uus/HeavyEquipment-Fe2.0.git
+            cd HeavyEquipment-Fe2.0
+            git pull origin dev
             sudo docker-compose down || true
             sudo docker-compose pull
             sudo docker-compose up -d --build
