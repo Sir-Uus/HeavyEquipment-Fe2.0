@@ -88,7 +88,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="nav-logo">
-        <p className="heavy">HEAVY</p> <p>EQUIPMENT</p>
+        <p className="heavy">HEAVY</p> <p>DOZER</p>
       </div>
 
       {isMobile ? (
