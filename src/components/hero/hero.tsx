@@ -22,7 +22,7 @@ const Hero = () => {
         }`}
       >
         <h2 className="text-md md:text-xl xl:text-3xl 2xl:text-[50px] font-bold 2xl:ml-16 2xl:mt-16">
-          POWERFUL EQUIPMENT
+          POWERFUL TRUCK
         </h2>
         <p className="text-[12px] md:text-sm xl:text-[18px] 2xl:text-2xl xl:leading-7 2xl:ml-16 2xl:mt-8 font-light text-gray-900">
           Welcome to our website for heavy equipment rentals and spare parts purchases. We offer a wide range
