@@ -61,6 +61,7 @@ export const useEquipmentImages = (equipmentIds: number[], delay: number = 500) 
     queryKey: ["equipmentImages", equipmentIds],
     queryFn: () => fetchEquipmentImages(equipmentIds, delay),
     enabled: equipmentIds.length > 0,
+    staleTime: 60000,
   });
 };
 
@@ -72,5 +73,6 @@ export const useEquipmentOptions = (filters: any) => {
       return lastPage.hasNextPage ? lastPage.currentPage + 1 : undefined;
     },
     initialPageParam: 1,
+    staleTime: 60000,
   });
 };
