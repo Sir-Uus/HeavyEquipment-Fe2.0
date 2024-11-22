@@ -15,7 +15,6 @@ const TransactionDetail = () => {
   }
 
   if (error) {
-    console.log("data", data);
     return <div className="text-center mt-40">Error loading transaction details.</div>;
   }
 

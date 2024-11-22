@@ -23,7 +23,6 @@ const otp = () => {
     try {
       const data = await sendOtp(formData);
       localStorage.setItem("email", data);
-      console.log(data);
 
       navigate("/reset-password");
     } catch (error) {
