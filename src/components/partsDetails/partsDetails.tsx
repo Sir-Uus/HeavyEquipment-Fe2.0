@@ -131,20 +131,7 @@ const PartsDetails = () => {
               className="inline-flex items-center mt-3 p-1 px-2 md:px-3 md:py-2 text-[12px] md:text-sm font-medium text-center rounded-3xl bg-yellow-400 text-gray-900 transition duration-300 ease-in hover:bg-yellow-300 hover:text-gray-950"
             >
               Browse More
-              <svg
-                className="w-3.5 h-3.5 ml-2"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M1 5h12m0 0L9 1m4 4L9 9"
-                />
-              </svg>
+              <span className="material-icons ms-2">arrow_forward</span>
             </a>
           </div>
         </div>
