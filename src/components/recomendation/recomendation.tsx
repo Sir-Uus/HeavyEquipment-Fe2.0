@@ -25,7 +25,7 @@ const Recomendation = () => {
   return (
     <>
       <div className="m-3 md:m-10 mt-20">
-        <div className=" md:m-10 mt-20 flex justify-between">
+        <div className="md:m-10 mt-20 flex justify-between">
           <div>
             <span className="text-[8px] md:text-xl font-semibold">Recomendation Equipment</span>
           </div>
