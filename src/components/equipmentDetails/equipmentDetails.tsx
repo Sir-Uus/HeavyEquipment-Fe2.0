@@ -61,28 +61,18 @@ const EquipmentDetails = () => {
               className="inline-flex items-center mt-3 p-1 px-2 md:px-3 md:py-2 text-[12px] md:text-sm font-medium text-center rounded-3xl bg-yellow-400 text-gray-900 transition duration-300 ease-in hover:bg-yellow-300 hover:text-gray-950"
             >
               Browse more
-              <svg
-                className="rtl:rotate-180 w-3.5 h-3.5 ml-2"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M1 5h12m0 0L9 1m4 4L9 9"
-                />
-              </svg>
+              <span className="material-icons ms-2">arrow_forward</span>
             </a>
           </div>
         </div>
 
         <div className="lg:col-span-7 w-full h-auto p-4 bg-white border border-gray-200 rounded-lg shadow mt-4 md:mt-0">
           <div className="flex flex-col items-center md:flex-row">
-            <img src={equipmentImage} alt="" className="w-[100%] h-48 md:w-[18rem] md:h-52 mb-4 md:mr-8 object-cover" />
+            <img
+              src={equipmentImage}
+              alt=""
+              className="w-[100%] h-48 md:w-[18rem] md:h-52 mb-4 md:mr-8 object-cover"
+            />
             <div className="text-sm font-semibold text-gray-700 w-full md:w-[41%]">
               <h5 className="mb-4 text-slate-800 text-lg font-semibold pb-4 text-center md:text-left uppercase">
                 {equipment.name}
@@ -90,7 +80,7 @@ const EquipmentDetails = () => {
               <div className="flex flex-col md:text-[16px] md:mt-8">
                 <p>
                   <span className="material-icons mr-2 text-[14px]">build</span>
-                <span className="text-xs">Type: {equipment.type}</span>
+                  <span className="text-xs">Type: {equipment.type}</span>
                 </p>
                 <p>
                   <span className="material-icons mr-2 text-[14px]">local_offer</span>
