@@ -9,7 +9,6 @@ export const useFacebookLogin = () => {
       return response.data;
     },
     onSuccess: (data) => {
-      console.log("Login Successfull:", data);
       localStorage.setItem("id", data.id);
       localStorage.setItem("role", data.role);
       localStorage.setItem("displayName", data.displayName);
