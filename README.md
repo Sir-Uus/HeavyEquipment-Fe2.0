@@ -48,3 +48,40 @@ export default tseslint.config({
   },
 })
 ```
+
+## Installation
+
+Use npm or yarn to install the dependencies.
+
+### Clone the repository
+
+```bash
+git clone https://github.com/your-username/your-project-name.git
+```
+
+### Navigate to the project folder
+
+```bash
+cd your-project-name
+```
+
+### Install Dependencies
+
+```bash
+npm i
+```
+
+## Usage
+### Start the development server
+
+```bash
+npm run dev
+```
+
+### Build production build
+
+```bash
+npm run build
+```
+
+# ENJOY !!!
